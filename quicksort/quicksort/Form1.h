@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Quicksort.h"
 
 namespace CppCLRWinformsProjekt {
@@ -103,15 +104,16 @@ namespace CppCLRWinformsProjekt {
 			this->suwak->TabIndex = 3;
 			this->suwak->Text = L"Liczba w¹tków";
 			this->suwak->Value = 1;
+			this->suwak->Scroll += gcnew System::EventHandler(this, &Form1::suwak_Scroll_1);
 			// 
 			// watki
 			// 
 			this->watki->AutoSize = true;
 			this->watki->Location = System::Drawing::Point(7, 116);
 			this->watki->Name = L"watki";
-			this->watki->Size = System::Drawing::Size(98, 17);
+			this->watki->Size = System::Drawing::Size(102, 17);
 			this->watki->TabIndex = 4;
-			this->watki->Text = L"Liczba w¹tków";
+			this->watki->Text = L"Liczba w¹tków: 1";
 			this->watki->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
 			// 
 			// groupBox1
@@ -209,7 +211,7 @@ namespace CppCLRWinformsProjekt {
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Quicksort quicksort;
+		Quicksort quicksort1;
 
 		/*if (liczba1->Text == "")
 		{
@@ -220,10 +222,10 @@ namespace CppCLRWinformsProjekt {
 		//pobranie liczb do sortowania
 	//	quicksort.set_tab(Convert::ToInt16(liczba1->Text), Convert::ToInt16(liczba2->Text), Convert::ToInt16(liczba3->Text));
 
-		quicksort.set_liczba_watkow(suwak->Value);
-		quicksort.quicksort();
+		quicksort1.set_liczba_watkow(suwak->Value);
+		quicksort1.quicksort();
 
-		label2->Text = "czas: " + Convert::ToString(quicksort.get_czas());
+		label2->Text = "czas: " + Convert::ToString(quicksort1.get_czas());
 		//}
 	}
 
@@ -235,12 +237,11 @@ namespace CppCLRWinformsProjekt {
 
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void suwak_Scroll(System::Object^ sender, System::EventArgs^ e) {
-		watki->Text="Liczba watkow: " + Convert::ToString(suwak->Value);
-		//toolTip1.SetToolTip(suwak, suwak.Value.ToString());
-	}
 	private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-};
+	private: System::Void suwak_Scroll_1(System::Object^ sender, System::EventArgs^ e) {
+		watki->Text = "Liczba watkow: " + Convert::ToString(suwak->Value);
+	}
+	};
 
 }

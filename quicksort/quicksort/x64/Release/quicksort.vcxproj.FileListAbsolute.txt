@@ -1,0 +1,2 @@
+C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\quicksort\x64\Release\quicksort.Form1.resources
+C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\quicksort\x64\Release\quicksort.vcxproj.GenerateResource.cache
