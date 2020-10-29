@@ -1,9 +1,0 @@
-﻿  biblioteka.cpp
-C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\Dll_cpp\biblioteka.cpp(13,1): warning C4273: "funkcja": niespójne powiązanie biblioteki dll
-C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\Dll_cpp\biblioteka.h(35,32): message : zobacz poprzednią definicję „funkcja”
-     Trwa tworzenie biblioteki C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Release\Dll_cpp.lib i obiektu C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Release\Dll_cpp.exp
-  Trwa generowanie kodu
-  Previous IPDB not found, fall back to full compilation.
-  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Zakończono generowanie kodu
-  Dll_cpp.vcxproj -> C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Release\Dll_cpp.dll
