@@ -10,7 +10,7 @@
 #include <utility>
 #include "framework.h"
 
-#include "biblioteka.h"
+//#include "biblioteka.h"
 #include "biblioteka2.h"
 #include "Quicksort.h"
 
@@ -23,7 +23,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 typedef int(_stdcall* MyProc1)(int, int);
-HINSTANCE hInst;
+//HINSTANCE hInst;
 
 void Quicksort::quicksort()
 {
@@ -58,13 +58,6 @@ bool Quicksort::wczytaj_z_pliku()
 	//ifstream plik("liczby2.txt");
 	ifstream plik(plik_n);
 	int n_wartosc;
-	 HINSTANCE dllHandle = LoadLibrary(L"JAAsm.dll");// NULL;
-    dllHandle = LoadLibrary(L"JAAsm.dll");
-
-    MyProc1 procedura = (MyProc1)GetProcAddress(dllHandle, "MyProc1");
-
-    int x = 9, y = 3;
-    int retVal = procedura(x, y);
 
 	if (plik)
 	{
@@ -123,6 +116,16 @@ void Quicksort::_sort(int* tab, int p, int r)
 
 int Quicksort::_partition(int * tab, int p, int r)
 {
+	HINSTANCE dllHandle = LoadLibrary(L"JAAsm.dll");// NULL;
+  dllHandle = LoadLibrary(L"JAAsm.dll");
+
+  MyProc1 procedura = (MyProc1)GetProcAddress(dllHandle, "MyProc1");
+
+  int x = 9, y = 3;
+  int retVal = procedura(x, y);
+
+
+
 	auto first = tab[p];
 	auto last = tab[r];
 	int pivot = 0;
@@ -168,7 +171,8 @@ int Quicksort::_partition(int * tab, int p, int r)
 		{
 			i++;
 			if (czy_asm)
-				swap_asm(tab, i, j);
+			{
+			}//swap_asm(tab, i, j);
 			else
 				swap_c(tab, i, j);
 			//_swap(tab, i, j);

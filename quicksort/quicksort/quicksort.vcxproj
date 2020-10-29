@@ -109,10 +109,12 @@
       <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_asm;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>dll_c.lib;dll_asm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dll_c.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -137,10 +139,12 @@
       <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_asm;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>dll_c.lib;dll_asm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dll_c.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
       <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

@@ -24,16 +24,9 @@ private:
 	string plik_n;
 	bool czy_asm;
 
-	//vector<int> wektor;//1
 
 	int rozmiar_tab;
-	//const int pivot;
 
-	//vector<int> mniejsze; //1
-	//vector<int> wieksze;//1
-
-	//int p;
-	//int r;
 	int thread_count;
 public:
 	//Quicksort() {}
