@@ -2,10 +2,14 @@
 JAAsm.asm(18): warning A6004: procedure argument or local not referenced : tab
 JAAsm.asm(18): warning A6004: procedure argument or local not referenced : i
 JAAsm.asm(18): warning A6004: procedure argument or local not referenced : j
-JAAsm.asm(97): warning A6004: procedure argument or local not referenced : tab
-JAAsm.asm(97): warning A6004: procedure argument or local not referenced : p
-JAAsm.asm(97): warning A6004: procedure argument or local not referenced : r
-JAAsm.asm(97): warning A6004: procedure argument or local not referenced : pivot
+JAAsm.asm(95): warning A6004: procedure argument or local not referenced : tab
+JAAsm.asm(95): warning A6004: procedure argument or local not referenced : p
+JAAsm.asm(95): warning A6004: procedure argument or local not referenced : r
+JAAsm.asm(95): warning A6004: procedure argument or local not referenced : pivot
+JAAsm.asm(171): warning A6004: procedure argument or local not referenced : tab
+JAAsm.asm(171): warning A6004: procedure argument or local not referenced : p
+JAAsm.asm(171): warning A6004: procedure argument or local not referenced : r
+JAAsm.asm(171): warning A6004: procedure argument or local not referenced : pivot
      Trwa tworzenie biblioteki C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug\dll_a.lib i obiektu C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug\dll_a.exp
 dll_a.exp : warning LNK4070: /OUT: dyrektywa JAAsm.dll w pliku .EXP jest inna niż nazwa pliku wyjściowego "C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug\dll_a.dll"; dyrektywa została zignorowana
   dll_a.vcxproj -> C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug\dll_a.dll

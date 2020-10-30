@@ -20,18 +20,15 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 
-HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
+
 
 void Quicksort::quicksort()
 {
 	czas = 0;
 	if (wczytaj_z_pliku())
 	{
-		//clock_t start = clock();
-
 		sort();
 
-		//clock_t stop = clock();
 
 		ofstream plik("zapisane.txt");
 
@@ -42,10 +39,11 @@ void Quicksort::quicksort()
 				plik << tab[i];
 				plik << endl;
 			}
+			plik.close();
 		}
-		plik.close();
+		else
+			MessageBox::Show("Blad otwarcia pliku wyjsciowego.");
 		MessageBox::Show("Gotowe.");
-		//czas = stop - start;
 		
 	}
 }
@@ -53,7 +51,6 @@ void Quicksort::quicksort()
 bool Quicksort::wczytaj_z_pliku()
 {
 	rozmiar_tab = 0;
-	//ifstream plik("liczby2.txt");
 	ifstream plik(plik_n);
 	int n_wartosc;
 
@@ -113,11 +110,10 @@ void Quicksort::_sort(int* tab, int p, int r)
 
 int Quicksort::_partition(int* tab, int p, int r)
 {
-	auto first = tab[p];
-	auto last = tab[r];
+	int first = tab[p];
+	int last = tab[r];
 	int pivot = 0;
-	// Median of three
-	//int middle = tab[(p + r) / 2];
+
 
 	pivot = tab[r];
 	auto i = p - 1;
@@ -126,10 +122,8 @@ int Quicksort::_partition(int* tab, int p, int r)
 
 	if (czy_asm)
 	{
-		
 		ten_for procedura2 = (ten_for)GetProcAddress(dllHandle, "ten_for");
 		int x = procedura2(tab, p, r, pivot);
-		//i = p;
 		i = x;
 	}
 	else
@@ -141,14 +135,7 @@ int Quicksort::_partition(int* tab, int p, int r)
 	//	if (tab[j] < pivot)
 	//	{
 	//		i++;
-	//		if (czy_asm)
-	//		{
-	//			
-	//			int wynik = procedura(tab,i,j);
-	//		}
-	//		else
-	//			swap_c(tab, i, j);
-	//		//_swap(tab, i, j);
+	//		_swap(tab, i, j);
 	//	}
 	//}
 	_swap(tab, i + 1, r);

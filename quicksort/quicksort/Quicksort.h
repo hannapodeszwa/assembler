@@ -11,6 +11,7 @@
 #include <chrono>
 #include <math.h>
 #include <stdlib.h>
+#include "framework.h"
 
 using namespace std;
 typedef int(_stdcall* swap_a)(int*, int, int);
@@ -24,6 +25,8 @@ private:
 	int* tab;
 	string plik_n;
 	bool czy_asm;
+
+	HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
 
 
 	int rozmiar_tab;
