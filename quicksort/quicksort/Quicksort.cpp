@@ -6,8 +6,8 @@
 #include <time.h>
 #include <forward_list>
 #include <thread>
-#include <vector>
-#include <utility>
+//#include <vector>
+//#include <utility>
 #include "framework.h"
 
 //#include "biblioteka.h"
@@ -22,33 +22,34 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
-typedef int(_stdcall* MyProc1)(int, int);
-//HINSTANCE hInst;
+
+
 
 void Quicksort::quicksort()
 {
+	czas = 0;
 	if (wczytaj_z_pliku())
 	{
-		clock_t start = clock();
+		//clock_t start = clock();
 
 		sort();
 
-		clock_t stop = clock();
+		//clock_t stop = clock();
 
 		ofstream plik("zapisane.txt");
 
 		if (plik)
 		{
-			for (int i=0;i<rozmiar_tab;i++)
+			for (int i = 0;i < rozmiar_tab;i++)
 			{
 				plik << tab[i];
 				plik << endl;
 			}
 		}
 		plik.close();
-		MessageBox::Show(Convert::ToString(tab[0]));
-
-		czas = stop - start;
+		MessageBox::Show("Gotowe.");
+		//czas = stop - start;
+		
 	}
 }
 
@@ -93,7 +94,11 @@ void Quicksort::_sort(int* tab, int p, int r)
 	thread_count++;
 	if (p < r)
 	{
-		int q = _partition(tab,p, r);
+		clock_t start = clock();
+
+		int q = _partition(tab, p, r);
+		clock_t stop = clock();
+		czas += stop - start;
 		if (thread_count >= liczba_watkow)
 		{
 			_sort(tab, p, q - 1);
@@ -103,7 +108,7 @@ void Quicksort::_sort(int* tab, int p, int r)
 		{
 			/*std::thread lower((&Quicksort::_sort),this,tab, p, q - 1);
 			std::thread upper(&Quicksort::_sort, this,tab, q + 1, r);
-			
+
 			lower.join();
 			upper.join();*/
 			std::thread lower((&Quicksort::_sort), this, tab, p, q - 1);
@@ -114,15 +119,11 @@ void Quicksort::_sort(int* tab, int p, int r)
 	}
 }
 
-int Quicksort::_partition(int * tab, int p, int r)
+int Quicksort::_partition(int* tab, int p, int r)
 {
-	HINSTANCE dllHandle = LoadLibrary(L"JAAsm.dll");// NULL;
-  dllHandle = LoadLibrary(L"JAAsm.dll");
 
-  MyProc1 procedura = (MyProc1)GetProcAddress(dllHandle, "MyProc1");
 
-  int x = 9, y = 3;
-  int retVal = procedura(x, y);
+
 
 
 
@@ -131,53 +132,42 @@ int Quicksort::_partition(int * tab, int p, int r)
 	int pivot = 0;
 	// Median of three
 	int middle = tab[(p + r) / 2];
-	//if (first > middle)
-	//{
-	//	//funkcja(middle,last,pivot);
 
-	//	if (middle > last)
-	//	{
-	//		pivot = middle;
-	//	}
-	//	else
-	//	{
-	//		pivot = std::min(first, last);
-	//	}
-	//}
-	//else {
-	//	if (middle > last)
-	//	{
-	//		pivot = std::max(first, last);
-	//	}
-	//	else
-	//	{
-	//		pivot = middle;
-	//	}
-	//}
-	pivot = tab[r]; //
+	pivot = tab[r];
 	auto i = p - 1;
-	//for (int j = p; j < r; ++j)//j<r
+	int max = r - 1;
+	int j = p;
+
+	//HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
+	//swap_a procedura = (swap_a)GetProcAddress(dllHandle, "swap_a");
+	
+
+
+	if (czy_asm)
+	{
+		HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
+		ten_for procedura2 = (ten_for)GetProcAddress(dllHandle, "ten_for");
+		int x = procedura2(tab, p, r, pivot);
+	}
+	else
+		ten_for_c(tab, p,r,pivot,i);
+
+
+	//for (int j = p; j <= (r - 1); j++)
 	//{
-	//	if (tab[j] <= pivot)
+	//	if (tab[j] < pivot)
 	//	{
-	//		_swap(tab,++i, j);
+	//		i++;
+	//		if (czy_asm)
+	//		{
+	//			
+	//			int wynik = procedura(tab,i,j);
+	//		}
+	//		else
+	//			swap_c(tab, i, j);
+	//		//_swap(tab, i, j);
 	//	}
 	//}
-	//_swap(tab, i + 1, r);
-	//return i + 1;
-	for (int j = p; j <= (r-1); j++)//j<r
-	{
-		if (tab[j] < pivot)
-		{
-			i++;
-			if (czy_asm)
-			{
-			}//swap_asm(tab, i, j);
-			else
-				swap_c(tab, i, j);
-			//_swap(tab, i, j);
-		}
-	}
 	_swap(tab, i + 1, r);
 	return i + 1;
 }
@@ -190,7 +180,7 @@ void Quicksort::sort()
 	_sort(tab, p, r);
 }
 
-void Quicksort::_swap(int * tab,int first, int second)
+void Quicksort::_swap(int* tab, int first, int second)
 {
 	int temp = tab[first];
 	tab[first] = tab[second];

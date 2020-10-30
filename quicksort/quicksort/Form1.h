@@ -241,12 +241,16 @@ namespace CppCLRWinformsProjekt {
 			//= gcnew(str.c_str);
 			quicksort1.set_plik(s);
 			quicksort1.set_liczba_watkow(suwak->Value);
-			if(radioButton2->Checked)
-			quicksort1.set_czy_asm(1);
+			if (radioButton2->Checked)
+			{
+				quicksort1.set_czy_asm(1);
+			}
+			else
+				quicksort1.set_czy_asm(0);
 
 			quicksort1.quicksort();
 
-			label2->Text = "czas: " + Convert::ToString(quicksort1.get_czas());
+			label2->Text = "czas: " + Convert::ToString(quicksort1.get_czas()) +"ms.";
 			
 		}
 	}

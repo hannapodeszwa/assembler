@@ -13,7 +13,9 @@
 #include <stdlib.h>
 
 using namespace std;
-
+typedef int(_stdcall* MyProc1)(int, int);
+typedef int(_stdcall* swap_a)(int*, int, int);
+typedef int(_stdcall* ten_for)(int*, int, int,int);
 
 class Quicksort
 {

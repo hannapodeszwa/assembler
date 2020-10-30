@@ -7,7 +7,8 @@
 //#endif
 
 
-extern "C"  BIBLIOTEKA2_API void swap_c(int* tab, int first, int second);
+//extern "C"  BIBLIOTEKA2_API void swap_c(int* tab, int first, int second);
+extern "C"  BIBLIOTEKA2_API void ten_for_c(int* tab, int p, int r, int pivot, int& i);
 
 
 
