@@ -1,4 +1,3 @@
 LIBRARY JAAsm
 
-EXPORTS swap_a;
 EXPORTS ten_for;

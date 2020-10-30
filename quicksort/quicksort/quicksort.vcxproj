@@ -106,13 +106,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_asm;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_a;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>dll_c.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dll_c.lib;dll_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\quicksort\x64\Release;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>
@@ -136,13 +136,13 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_asm;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_c;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\dll_a;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>dll_c.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dll_c.lib;dll_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\quicksort\x64\Release;C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>
       </ModuleDefinitionFile>
     </Link>

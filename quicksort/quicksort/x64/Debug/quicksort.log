@@ -1,5 +1,9 @@
-﻿  CppCLR_WinformsProjekt.cpp
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  CppCLR_WinformsProjekt.cpp
+  Form1.cpp
   Quicksort.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
   Generowanie kodu...
   AssemblyInfo.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
   quicksort.vcxproj -> C:\Users\hanna\Desktop\programowanie\github\assembler\quicksort\x64\Debug\quicksort.exe

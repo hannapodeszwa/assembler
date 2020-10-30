@@ -14,7 +14,7 @@
 #include "framework.h"
 
 using namespace std;
-typedef int(_stdcall* swap_a)(int*, int, int);
+//typedef int(_stdcall* swap_a)(int*, int, int);
 typedef int(_stdcall* ten_for)(int*, int, int,int);
 
 class Quicksort
@@ -33,7 +33,6 @@ private:
 
 	int thread_count;
 public:
-	//Quicksort() {}
 	void quicksort();
 	double get_czas() { return czas; }
 	void set_plik(string s) { plik_n = s; }
