@@ -221,14 +221,6 @@ namespace CppCLRWinformsProjekt {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		Quicksort quicksort1;
 
-		/*if (liczba1->Text == "")
-		{
-			MessageBox::Show("Podaj liczby do sortowania.");
-		}
-		else
-		{*/
-		//pobranie liczb do sortowania
-	//	quicksort.set_tab(Convert::ToInt16(liczba1->Text), Convert::ToInt16(liczba2->Text), Convert::ToInt16(liczba3->Text));
 		if (nazwa_pliku->Text == "")
 		{
 			MessageBox::Show("Podaj plik.");
@@ -238,7 +230,6 @@ namespace CppCLRWinformsProjekt {
 			String^ str = (liczby->Text);
 			string s;
 			MarshalString(str, s);
-			//= gcnew(str.c_str);
 			quicksort1.set_plik(s);
 			quicksort1.set_liczba_watkow(suwak->Value);
 			if (radioButton2->Checked)
@@ -250,7 +241,7 @@ namespace CppCLRWinformsProjekt {
 
 			quicksort1.quicksort();
 
-			label2->Text = "czas: " + Convert::ToString(quicksort1.get_czas()) +"ms.";
+			label2->Text = "czas: " + Convert::ToString(quicksort1.get_czas()) +" ms.";
 			
 		}
 	}

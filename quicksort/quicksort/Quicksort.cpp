@@ -6,11 +6,8 @@
 #include <time.h>
 #include <forward_list>
 #include <thread>
-//#include <vector>
-//#include <utility>
 #include "framework.h"
 
-//#include "biblioteka.h"
 #include "biblioteka2.h"
 #include "Quicksort.h"
 
@@ -23,7 +20,7 @@ using namespace System::Data;
 using namespace System::Drawing;
 
 
-
+HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
 
 void Quicksort::quicksort()
 {
@@ -106,11 +103,6 @@ void Quicksort::_sort(int* tab, int p, int r)
 		}
 		else
 		{
-			/*std::thread lower((&Quicksort::_sort),this,tab, p, q - 1);
-			std::thread upper(&Quicksort::_sort, this,tab, q + 1, r);
-
-			lower.join();
-			upper.join();*/
 			std::thread lower((&Quicksort::_sort), this, tab, p, q - 1);
 			_sort(tab, q + 1, r);
 			lower.join();
@@ -121,33 +113,24 @@ void Quicksort::_sort(int* tab, int p, int r)
 
 int Quicksort::_partition(int* tab, int p, int r)
 {
-
-
-
-
-
-
 	auto first = tab[p];
 	auto last = tab[r];
 	int pivot = 0;
 	// Median of three
-	int middle = tab[(p + r) / 2];
+	//int middle = tab[(p + r) / 2];
 
 	pivot = tab[r];
 	auto i = p - 1;
 	int max = r - 1;
 	int j = p;
 
-	//HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
-	//swap_a procedura = (swap_a)GetProcAddress(dllHandle, "swap_a");
-	
-
-
 	if (czy_asm)
 	{
-		HINSTANCE dllHandle = LoadLibrary(L"dll_a.dll");
+		
 		ten_for procedura2 = (ten_for)GetProcAddress(dllHandle, "ten_for");
 		int x = procedura2(tab, p, r, pivot);
+		//i = p;
+		i = x;
 	}
 	else
 		ten_for_c(tab, p,r,pivot,i);
